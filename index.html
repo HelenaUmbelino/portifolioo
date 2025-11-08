@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Digital - Helena Umbelino</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Link para seu arquivo CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Configuração do Tailwind (para modo escuro e fonte)
+        tailwind.config = {
+            darkMode: 'class', // Habilita o modo escuro baseado em classe
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- ===== HEADER / NAVEGAÇÃO ===== -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm dark:shadow-gray-700/50 sticky top-0 z-50 w-full">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Nome -->
+                <a href="#inicio" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Helena Umbelino Peçanha</a>
+
+                <!-- Links do Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Início</a>
+                    <a href="#sobre" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Sobre</a>
+                    <a href="#habilidades" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Habilidades</a>
+                    <a href="#projetos" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projetos</a>
+                    <a href="#contato" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contato</a>
+                    
+                    <!-- Botão Modo Escuro -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i data-lucide="sun" class="text-gray-600 dark:text-gray-300 block dark:hidden"></i>
+                        <i data-lucide="moon" class="text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors mr-2">
+                        <i data-lucide="sun" class_name="text-gray-600 dark:text-gray-300 block dark:hidden"></i>
+                        <i data-lucide="moon" class_name="text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu Mobile (Escondido) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow-lg">
+            <a href="#inicio" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Início</a>
+            <a href="#sobre" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Sobre</a>
+            <a href="#habilidades" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Habilidades</a>
+            <a href="#projetos" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Projetos</a>
+            <a href="#contato" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contato</a>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main>
+
+        <!-- ===== SEÇÃO INÍCIO (HERO) ===== -->
+        <section id="inicio" class="min-h-[calc(100vh-64px)] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl text-center">
+                <img src="me.jpg" alt="Foto de Perfil" class="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
+                    Olá, meu nome é <span class="text-indigo-600 dark:text-indigo-400">Helena Umbelino Peçanha</span>
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
+                    Eu sou <span id="typing-text" class="text-indigo-500 dark:text-indigo-300 font-bold"></span><span class="typing-cursor"></span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Bem-vindo ao meu portfólio digital. Aqui você encontrará meus projetos, habilidades e um pouco mais sobre minha jornada profissional.
+                </p>
+                <a href="#projetos" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                    Meus Projetos
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO SOBRE MIM ===== -->
+        <section id="sobre" class="py-20 md:py-32 bg-white dark:bg-gray-800 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Sobre Mim</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/e0e7ff/6366f1?text=Sobre+Mim&font=inter" alt="Imagem Sobre Mim" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-semibold mb-4">Quem sou eu profissionalmente?</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sou uma estudante apaixonado por criar soluções tecnológicas que impactam positivamente a vida das pessoas. 
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            Tenho experiência em Lorem ipsum dolor sit amet, consectetur adipiscing elit. Estou sempre em busca de novos desafios e aprendizados.
+                        </p>
+                        <a href="#contato" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Vamos conversar &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO HABILIDADES ===== -->
+        <section id="habilidades" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Habilidades</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <!-- Exemplo de Habilidade 1 -->
+                    <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i data-lucide="html5" class="w-16 h-16 text-orange-500 mb-3"></i>
+                        <span class="text-lg font-medium">HTML</span>
+                    </div>
+                    <!-- Exemplo de Habilidade 2 -->
+                    <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i data-lucide="css3" class="w-16 h-16 text-blue-500 mb-3"></i>
+                        <span class="text-lg font-medium">CSS</span>
+                    </div>
+                    <!-- Exemplo de Habilidade 3 -->
+                    <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i data-lucide="javascript" class="w-16 h-16 text-yellow-500 mb-3"></i>
+                        <span class="text-lg font-medium">JavaScript</span>
+                    </div>
+                    <!-- Exemplo de Habilidade 4 -->
+                    <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i data-lucide="react" class="w-16 h-16 text-cyan-500 mb-3"></i>
+                        <span class="text-lg font-medium">React</span>
+                    </div>
+                    <!-- Exemplo de Habilidade 5 -->
+                    <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i data-lucide="figma" class="w-16 h-16 text-pink-500 mb-3"></i>
+                        <span class="text-lg font-medium">Figma</span>
+                    </div>
+                    <!-- Exemplo de Habilidade 6 -->
+                    <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <i data-lucide="git-branch" class="w-16 h-16 text-red-500 mb-3"></i>
+                        <span class="text-lg font-medium">GitHub</span>
+                    </div>
+                    <!-- Adicione mais habilidades conforme necessário -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO PROJETOS ===== -->
+        <section id="projetos" class="py-20 md:py-32 bg-white dark:bg-gray-800 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Projetos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Projeto 1 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://placehold.co/600x400/93c5fd/1e3a8a?text=Projeto+1&font=inter" alt="Projeto 1" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2">Projeto 1</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                            <button 
+                                class="open-modal mt-auto w-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200 font-medium px-4 py-2 rounded-md hover:bg-indigo-200 dark:hover:bg-indigo-700 transition-colors"
+                                data-title="Nome do Projeto 1"
+                                data-img="https://placehold.co/600x400/93c5fd/1e3a8a?text=Projeto+1&font=inter"
+                                data-description="Descrição completa do Projeto 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                                data-tech="HTML, CSS, JavaScript"
+                            >
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Projeto 2 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://placehold.co/600x400/a7f3d0/052e16?text=Projeto+2&font=inter" alt="Projeto 2" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2">Projeto 2</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                            <button 
+                                class="open-modal mt-auto w-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200 font-medium px-4 py-2 rounded-md hover:bg-indigo-200 dark:hover:bg-indigo-700 transition-colors"
+                                data-title="Nome do Projeto 2"
+                                data-img="https://placehold.co/600x400/a7f3d0/052e16?text=Projeto+2&font=inter"
+                                data-description="Descrição completa do Projeto 2. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                data-tech="React, Tailwind CSS, Firebase"
+                            >
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://placehold.co/600x400/fecaca/7f1d1d?text=Projeto+3&font=inter" alt="Projeto 3" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2">Projeto 3</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                            <button 
+                                class="open-modal mt-auto w-full bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200 font-medium px-4 py-2 rounded-md hover:bg-indigo-200 dark:hover:bg-indigo-700 transition-colors"
+                                data-title="Nome do Projeto 3"
+                                data-img="https://placehold.co/600x400/fecaca/7f1d1d?text=Projeto+3&font=inter"
+                                data-description="Descrição completa do Projeto 3. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+                                data-tech="Figma, UI/UX Design"
+                            >
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO CONTATO ===== -->
+        <section id="contato" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+                <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 md:p-12 rounded-lg shadow-xl">
+                    
+                    <!-- Mensagem de Sucesso (Escondida) -->
+                    <div id="form-success" class="hidden mb-6 p-4 rounded-md bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">
+                        Obrigado pelo seu contato! Responderei em breve.
+                    </div>
+
+                    <!-- Formulário de Contato -->
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nome *</label>
+                            <input type="text" id="nome" name="nome" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div>
+                                <label for="telefone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Telefone (Opcional)</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="mensagem" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300 ease-in-out">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="bg-gray-100 dark:bg-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <!-- Link do GitHub (Obrigatório) -->
+                <a href="https://github.com/seunomedeusuario" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <i data-lucide="github" class="w-8 h-8"></i>
+                </a>
+                <!-- Link do LinkedIn (Opcional, mas recomendado) -->
+                <a href="https://linkedin.com/in/seunomedeusuario" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <i data-lucide="linkedin" class="w-8 h-8"></i>
+                </a>
+                <!-- Email (Opcional) -->
+                <a href="mailto:seuemail@exemplo.com" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                    <i data-lucide="mail" class="w-8 h-8"></i>
+                </a>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">&copy; 2025 Helena Umbelino Peçanha.</p>
+        </div>
+    </footer>
+
+
+    <!-- ===== MODAL DO PROJETO (Escondido) ===== -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[100] hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <!-- Conteúdo do Modal -->
+            <div class="relative">
+                <!-- Botão de Fechar -->
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+                
+                <img id="modal-img" src="" alt="Imagem do Projeto" class="w-full h-64 object-cover rounded-t-lg">
+                
+                <div class="p-8">
+                    <h2 id="modal-title" class="text-3xl font-bold mb-4"></h2>
+                    <p id="modal-description" class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6"></p>
+                    <h3 class="text-xl font-semibold mb-3">Ferramentas Usadas:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span id="modal-tech" class="text-sm font-medium"></span>
+                        <!-- As tecnologias serão inseridas aqui via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== SCRIPT ===== -->
+    <!-- Link para seu arquivo JavaScript -->
+    <!-- O "defer" garante que o script só rode depois que o HTML for carregado -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
